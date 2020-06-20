@@ -9,7 +9,7 @@ public class Util {
     // реализуйте настройку соеденения с БД
     public static Connection getMysqlConnection() {
         try {
-            DriverManager.registerDriver((Driver) Class.forName("com.mysql.jdbc.Driver").newInstance());
+            DriverManager.registerDriver((Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance());
 
             StringBuilder url = new StringBuilder();
             //jdbc:mysql://localhost:3306/?user=root
@@ -18,7 +18,7 @@ public class Util {
                     append("jdbc:mysql://").        //db type
                     append("localhost:").           //host name
                     append("3306/").                //port
-                    append("db_example?").          //db name
+                    append("db_user?").          //db name
                     append("user=root&").         //login
                     append("password=root").      //password
                     append("&serverTimezone=UTC");   //setup server time
